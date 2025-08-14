@@ -1,3 +1,5 @@
+const SANDBOX_API_KEY='key_live_4e188ef5754649e5aceaff5733a62c30'
+const SANDBOX_API_SECRET='secret_live_0afc41875f284de5a2e563b5d6d3f3e9'
 export async function POST(req) {
   try {
     // Changed here to match frontend: destructure pan, dob, name_as_per_pan, reason
@@ -14,8 +16,8 @@ export async function POST(req) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": process.env.SANDBOX_API_KEY,
-        "x-api-secret": process.env.SANDBOX_API_SECRET,
+        "x-api-key": SANDBOX_API_KEY,
+        "x-api-secret": SANDBOX_API_SECRET,
       },
     });
 
@@ -46,7 +48,7 @@ export async function POST(req) {
       headers: {
         "Content-Type": "application/json",
         "authorization": accessToken,
-        "x-api-key": process.env.SANDBOX_API_KEY,
+        "x-api-key": SANDBOX_API_KEY,
         "x-accept-cache": "true",
         // Add x-api-version header here if your doc specifies a version
         // "x-api-version": "1.0",
